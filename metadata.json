@@ -1,0 +1,10 @@
+{
+    "id": "Unfair_Balatro_mod",
+    "name": "Unfair Balatro",
+    "author": ["tr1psitter", "BIG_SPARZHA"],
+    "description": "A mod that makes you suffer from the unfairness of life.",
+    "prefix": "unfb",
+    "main_file": "main.lua",
+    "version": "0.0.1"
+    
+}
