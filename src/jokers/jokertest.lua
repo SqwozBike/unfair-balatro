@@ -5,26 +5,20 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     rarity = 1,
     blueprint_compat = true,
-    cost = 5,
+    cost = 6,
     discovered = true,
-    --[[
-        Note: Unlike some vanilla Jokers that put values in card.ability, these examples will use card.ability.extra as it's best practice for modded Jokers, since card.ability is used for a lot of other values that might be accindentally written over.
-    ]]
-    config = {extra = {mult = 10, change = 5}},
+    config = {extra = {mult = 67}},
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult, card.ability.extra.change } }
+        return { vars = { card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
-    -- Check if we have played a Flush before we do any scoring and increment the mult
-    if context.before and next(context.poker_hands['Flush']) then
-        card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.change
-        return {
-            message = 'retarded!',
-            colour = G.C.RED
-        }    
-    end
-    -- Add the mult in main scoring context
-    if context.joker_main then
+    local nine_tally = 0
+    if G.playing_cards then
+            for _, playing_card in ipairs(G.playing_cards) do
+                if playing_card:get_id() == 7 then nine_tally = nine_tally + 1 end
+            end
+        end
+    if context.joker_main and nine_tally == 6 then
         return {
             mult = card.ability.extra.mult
         }
