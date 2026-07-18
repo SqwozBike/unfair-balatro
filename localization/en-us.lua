@@ -5,7 +5,7 @@ return {
         Joker = {
             -- this should be the full key of your object, including any prefixes
             j_unfb_jokertest = {
-                name = 'Six Seven',
+                name = 'Six Sevens',
                 text = {
                     'if you have exactly six sevens',
                     'in your deck gain {C:mult}+#1#{} mult',

@@ -3,9 +3,9 @@ SMODS.Joker {
     atlas = "jokertest",
     -- atlas = "key", -- here you can use the atlas created above, if you have one
     pos = { x = 0, y = 0 },
-    rarity = 1,
+    rarity = 2,
     blueprint_compat = true,
-    cost = 6,
+    cost = 6.7,
     discovered = true,
     config = {extra = {mult = 67}},
     loc_vars = function(self, info_queue, card)
