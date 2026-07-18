@@ -5,7 +5,6 @@ SMODS.Atlas{
     px = 71,
     py = 95
 }
-
 --#endregion
 
 --#region File loading
